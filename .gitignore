@@ -1,0 +1,11 @@
+node_modules
+.next
+out
+.env*
+.DS_Store
+*.log
+.vercel
+
+# The CV carries a phone number and an address; publishing it is an explicit decision, so it stays
+# out of the repository until that decision is made (git add -f public/Deyan_Peshev_CV.pdf).
+public/Deyan_Peshev_CV.pdf
