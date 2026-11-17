@@ -1,7 +1,7 @@
 import {
   ArrowUpRight, ArrowRight, Github, Linkedin, Mail, Cpu, BrainCircuit,
   Cloud, Workflow, Network, ChevronDown,
-  Code2, Activity, Server, ShieldCheck
+  Code2, Activity, Server, ShieldCheck, Gauge
 } from "lucide-react";
 import Topbar from "../components/Topbar";
 import { headline, buildMatrix } from "../lib/dataset";
@@ -80,7 +80,21 @@ const projects = [
     link: "https://github.com/Deyan86", linkLabel: "Repository link pending publication",
   },
   {
-    number: "07", category: "SOFTWARE & AUTOMATION", title: "Software Development & Automation",
+    number: "07", category: "WINDOWS SYSTEMS / AUDIT FRAMEWORK", title: "AI System Enterprise Audit",
+    description: "A diagnostic framework for AI workstations and servers: 50 PowerShell modules emit one standardized report shape, and a native desktop app drives them — run a single module or a full pass, watch the log stream and read the scores back as history. It is built for the question an AI box always raises: are the GPU, the VRAM budget and the inference runtime actually configured correctly.",
+    facts: [
+      "50 PowerShell modules share one output schema (module, status, score, warnings, errors) and are discovered by the same rule the runner uses — a file is callable when it defines a Start-* or Get-* function",
+      "29 frontend Vitest tests and 14 Rust backend tests pass on this checkout, and svelte-check reports 0 errors and 0 warnings",
+      "A native Tauri 2 + Svelte app runs the modules, streams live logs and charts the scores; the browser preview has no Rust backend behind it and says so on every tab instead of failing silently",
+      "The report reader tolerates what PowerShell actually writes — the UTF-8 BOM, three different encodings of the timestamp and truncated files — so one malformed report cannot empty the results view",
+      "The audited surface is the AI-infrastructure path: GPU compute and VRAM state, model runtimes (Ollama, vLLM, PyTorch, CUDA), Docker and K3s hosts, drivers, firmware and thermal limits",
+    ],
+    stack: ["PowerShell", "Rust", "Tauri 2", "Svelte", "TypeScript", "Vite", "Chart.js"],
+    icon: <Gauge />,
+    link: "https://github.com/Deyan86", linkLabel: "Repository link pending publication",
+  },
+  {
+    number: "08", category: "SOFTWARE & AUTOMATION", title: "Software Development & Automation",
     description: "Cross-platform utilities, desktop applications, web automation and AI-assisted scripts developed across Python, Flask, Electron, React and Kivy.",
     facts: ["Desktop & cross-platform utilities", "Browser automation", "Testing and debugging workflows"],
     stack: ["Python", "Flask", "Electron", "React", "Playwright", "Selenium"],
