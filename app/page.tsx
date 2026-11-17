@@ -1,7 +1,7 @@
 import {
   ArrowUpRight, ArrowRight, Github, Linkedin, Mail, Cpu, BrainCircuit,
   Cloud, Workflow, Network, ChevronDown,
-  Code2, Activity, Server
+  Code2, Activity, Server, ShieldCheck
 } from "lucide-react";
 import Topbar from "../components/Topbar";
 import { headline, buildMatrix } from "../lib/dataset";
@@ -66,7 +66,21 @@ const projects = [
     link: "https://github.com/Deyan86", linkLabel: "Repository link pending publication",
   },
   {
-    number: "06", category: "SOFTWARE & AUTOMATION", title: "Software Development & Automation",
+    number: "06", category: "LOCAL AI SECURITY TEAM", title: "Local Windows SecOps AI team",
+    description: "A security-operations assistant that runs entirely on one Windows machine: deterministic PowerShell and bash collectors do the heavy lifting, and local models through LM Studio only ever see the anomalies that survive the rule engine — so nothing leaves the host and no finding is unexplained. The team audits and recommends; it never changes the system on its own.",
+    facts: [
+      "798 offline Python tests collected and 73 JS tests passing, neither of which needs a network or a running model server",
+      "A LangGraph workflow of collect → normalize → route → analyze → correlate → report, where a deterministic route step decides which agent sees which anomalies and a commander agent writes the coordinated summary",
+      "Remediation scripts are generated from templates rather than by a model, destructive lines are emitted commented out, and a gated command runs only after the operator confirms the exact command text",
+      "Offline knowledge base over six sources — MITRE ATT&CK, CAPEC, D3FEND, SigmaHQ, Atomic Red Team and NVD — backed by a SQLite plus numpy vector store instead of a vector database",
+      "A read-only WSL collector and a review-only remediation path extend the same team into Linux distros",
+    ],
+    stack: ["Python", "LangGraph", "FastAPI", "SQLite + numpy", "PowerShell", "React", "Vite", "LM Studio"],
+    icon: <ShieldCheck />,
+    link: "https://github.com/Deyan86", linkLabel: "Repository link pending publication",
+  },
+  {
+    number: "07", category: "SOFTWARE & AUTOMATION", title: "Software Development & Automation",
     description: "Cross-platform utilities, desktop applications, web automation and AI-assisted scripts developed across Python, Flask, Electron, React and Kivy.",
     facts: ["Desktop & cross-platform utilities", "Browser automation", "Testing and debugging workflows"],
     stack: ["Python", "Flask", "Electron", "React", "Playwright", "Selenium"],
