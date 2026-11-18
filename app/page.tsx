@@ -94,7 +94,21 @@ const projects = [
     link: "https://github.com/Deyan86", linkLabel: "Repository link pending publication",
   },
   {
-    number: "08", category: "SOFTWARE & AUTOMATION", title: "Software Development & Automation",
+    number: "08", category: "MCP / DEVOPS TOOLING", title: "Universal MCP Server",
+    description: "One MCP server that several clients and agents attach to over stdio, a stdio bridge or streamable HTTP. It reads, searches, validates and analyses whatever project it is pointed at, and a multi-project hub lets a single running server switch between repositories instead of starting one per project.",
+    facts: [
+      "500 tests pass, and CI runs the suite on Python 3.10, 3.11 and 3.12 with ruff lint, a ruff format check and mypy inside the same job",
+      "55 tools by registration count: 50 read-only plus a five-tool write group that is off by default, with a test asserting those tools are absent until the operator enables them",
+      "3 resources and 12 prompts, including a server_status self-description and a doctor prompt that reports the state of the running server",
+      "The file tools honour each project's own .gitignore plus a fixed blocklist, so .venv, node_modules, build caches and .env stay out of every read, search and edit",
+      "The HTTP transport refuses to bind to a public address unless a shared token is set, and the token is compared without leaking its timing",
+    ],
+    stack: ["Python", "MCP SDK", "Starlette", "uvicorn", "pytest", "ruff", "mypy", "Docker"],
+    icon: <Network />,
+    link: "https://github.com/Deyan86", linkLabel: "Repository link pending publication",
+  },
+  {
+    number: "09", category: "SOFTWARE & AUTOMATION", title: "Software Development & Automation",
     description: "Cross-platform utilities, desktop applications, web automation and AI-assisted scripts developed across Python, Flask, Electron, React and Kivy.",
     facts: ["Desktop & cross-platform utilities", "Browser automation", "Testing and debugging workflows"],
     stack: ["Python", "Flask", "Electron", "React", "Playwright", "Selenium"],
