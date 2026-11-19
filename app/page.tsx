@@ -1,7 +1,7 @@
 import {
   ArrowUpRight, ArrowRight, Github, Linkedin, Mail, Cpu, BrainCircuit,
   Cloud, Workflow, Network, ChevronDown,
-  Code2, Activity, Server, ShieldCheck, Gauge, FlaskConical
+  Code2, Activity, Server, ShieldCheck, Gauge, FlaskConical, Bot
 } from "lucide-react";
 import Topbar from "../components/Topbar";
 import { headline, buildMatrix } from "../lib/dataset";
@@ -122,7 +122,21 @@ const projects = [
     link: "https://github.com/Deyan86", linkLabel: "Repository link pending publication",
   },
   {
-    number: "10", category: "SOFTWARE & AUTOMATION", title: "Software Development & Automation",
+    number: "10", category: "AUTONOMOUS AGENT PIPELINE", title: "Superstep Agent — self-healing LangGraph code pipeline",
+    description: "A pipeline that takes a programming task from plan to reviewed, tested and documented code, running as one LangGraph graph over an Apache Kafka backbone. Each stage announces itself into the frame that the dashboard renders, so a run can be followed and replayed rather than guessed at from logs.",
+    facts: [
+      "Five nodes — researcher, coder, tester, reviewer and writer — compiled over a SQLite checkpointer, with the reviewer's verdict routing a rejected result back to the coder instead of ending the run",
+      "80 of 85 collected tests pass and 5 skip without the containers, while CI runs four jobs including one that composes Kafka with the API and executes the pipeline end to end",
+      "Failover walks a six-step model ladder across six providers, rebuilt inside the node rather than wrapped in a retry decorator",
+      "18 tool functions and 16 model-facing tool schemas, one of each contributed by a plugin discovered at import time",
+      "The React dashboard reads the Kafka frames over a WebSocket: a DAG view coloured by the real edges, a Monaco panel with the validated code, a Code Wiki tab and a code graph served without any external network",
+    ],
+    stack: ["Python", "LangGraph", "Kafka", "FastAPI", "ChromaDB", "React", "Ollama", "vLLM"],
+    icon: <Bot />,
+    link: "https://github.com/Deyan86", linkLabel: "Repository link pending publication",
+  },
+  {
+    number: "11", category: "SOFTWARE & AUTOMATION", title: "Software Development & Automation",
     description: "Cross-platform utilities, desktop applications, web automation and AI-assisted scripts developed across Python, Flask, Electron, React and Kivy.",
     facts: ["Desktop & cross-platform utilities", "Browser automation", "Testing and debugging workflows"],
     stack: ["Python", "Flask", "Electron", "React", "Playwright", "Selenium"],
