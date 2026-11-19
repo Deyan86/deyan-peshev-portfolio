@@ -1,7 +1,7 @@
 import {
   ArrowUpRight, ArrowRight, Github, Linkedin, Mail, Cpu, BrainCircuit,
   Cloud, Workflow, Network, ChevronDown,
-  Code2, Activity, Server, ShieldCheck, Gauge, FlaskConical, Bot
+  Code2, Activity, Server, ShieldCheck, Gauge, FlaskConical, Bot, Building2
 } from "lucide-react";
 import Topbar from "../components/Topbar";
 import { headline, buildMatrix } from "../lib/dataset";
@@ -136,7 +136,21 @@ const projects = [
     link: "https://github.com/Deyan86", linkLabel: "Repository link pending publication",
   },
   {
-    number: "11", category: "SOFTWARE & AUTOMATION", title: "Software Development & Automation",
+    number: "11", category: "ENTERPRISE AI AGENT / HCI", title: "AOS-Architect — Nutanix L3 support agent on local models",
+    description: "An L3 infrastructure support agent for Nutanix AOS that runs entirely on local models: a FastAPI service answering from vendor documentation through vector retrieval, reading live cluster state through Prism Central, and scoring its own answers with an evaluation framework rather than trusting a demo.",
+    facts: [
+      "46 tests pass in 8 seconds, and the documentation carries a tool-by-tool live status table dated to the day it was last verified — including the negative result the evaluation framework measured against itself",
+      "Retrieval runs on Supabase with pgvector: a hybrid search RPC combining vector distance with BM25, then a cross-encoder re-rank, with the schema and the role grants kept in versioned SQL",
+      "Eight Prism Central tools cover clusters, cluster details, alerts, VMs, health, capacity stats, LCM status and a connectivity probe; the endpoint and credentials are read only from the environment, so nothing about a real cluster is stored in the repository",
+      "The model layer is deliberately narrow — Ollama and LM Studio republished into WSL through a socat bridge, with no vLLM or hosted rung, because a model picker that answers with a model nobody chose is a lying picker",
+      "Web lookup falls back from DuckDuckGo HTML to a self-hosted SearXNG whose per-engine timeout is capped at 8 seconds after the agent was observed giving up before slower engines answered, and the health endpoint no longer performs a search at all",
+    ],
+    stack: ["Python", "FastAPI", "Supabase", "pgvector", "Ollama", "LM Studio", "Redis", "SearXNG", "Docker"],
+    icon: <Building2 />,
+    link: "https://github.com/Deyan86", linkLabel: "Repository link pending publication",
+  },
+  {
+    number: "12", category: "SOFTWARE & AUTOMATION", title: "Software Development & Automation",
     description: "Cross-platform utilities, desktop applications, web automation and AI-assisted scripts developed across Python, Flask, Electron, React and Kivy.",
     facts: ["Desktop & cross-platform utilities", "Browser automation", "Testing and debugging workflows"],
     stack: ["Python", "Flask", "Electron", "React", "Playwright", "Selenium"],
