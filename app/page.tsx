@@ -1,7 +1,7 @@
 import {
   ArrowUpRight, ArrowRight, Github, Linkedin, Mail, Cpu, BrainCircuit,
   Cloud, Workflow, Network, ChevronDown,
-  Code2, Activity, Server, ShieldCheck, Gauge
+  Code2, Activity, Server, ShieldCheck, Gauge, FlaskConical
 } from "lucide-react";
 import Topbar from "../components/Topbar";
 import { headline, buildMatrix } from "../lib/dataset";
@@ -108,7 +108,21 @@ const projects = [
     link: "https://github.com/Deyan86", linkLabel: "Repository link pending publication",
   },
   {
-    number: "09", category: "SOFTWARE & AUTOMATION", title: "Software Development & Automation",
+    number: "09", category: "GPU / TRITON KERNELS", title: "Hand-written Triton kernels with an honest benchmark",
+    description: "Triton kernels written by hand, with the measurement discipline built around them: input validation before the launch, a benchmark that counts the bytes each compared path actually moves, and an A/B method that refuses to call a result a win when the noise is larger than the difference. Measured on an RTX 5090 Laptop (sm_120).",
+    facts: [
+      "195 pytest tests, of which 64 pass on a machine with no GPU at all — CI installs CPU-only torch on a pinned runner and clears CUDA_VISIBLE_DEVICES rather than skipping the suite",
+      "44 TypeScript tests for the dashboard's server layer, run by node --test with no extra dependency, in a CI matrix of Node 22 and Node 26",
+      "Four kernels — fused add+ReLU, row-wise softmax, layer norm and a grid-stride sum — each rejecting a mismatched operand before the launch",
+      "The A/B harness counts a win only when the median clears 1.5 times the spread observed between its own repeats: across the recorded runs that is 45 WITHIN NOISE, 10 faster and 13 slower, including two sizes where a 1.4× median is reported as no win",
+      "Seven benchmark runs are committed as JSON with a full environment passport — GPU, driver, CUDA, torch and triton version, git commit and whether the worktree was dirty — while the 4.5 GB of raw profiler traces stay out of the repository",
+    ],
+    stack: ["Python", "Triton", "PyTorch", "CUDA", "pytest", "Node.js", "Next.js 16"],
+    icon: <FlaskConical />,
+    link: "https://github.com/Deyan86", linkLabel: "Repository link pending publication",
+  },
+  {
+    number: "10", category: "SOFTWARE & AUTOMATION", title: "Software Development & Automation",
     description: "Cross-platform utilities, desktop applications, web automation and AI-assisted scripts developed across Python, Flask, Electron, React and Kivy.",
     facts: ["Desktop & cross-platform utilities", "Browser automation", "Testing and debugging workflows"],
     stack: ["Python", "Flask", "Electron", "React", "Playwright", "Selenium"],
