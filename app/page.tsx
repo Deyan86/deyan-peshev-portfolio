@@ -164,7 +164,22 @@ const projects = [
     link: "https://github.com/Deyan86", linkLabel: "Repository link pending publication",
   },
   {
-    number: "13", category: "SOFTWARE & AUTOMATION", title: "Software Development & Automation",
+    number: "13", category: "EVENT-DRIVEN AI PLATFORM / SPORTS PERFORMANCE", title: "Sports performance platform — ten services on Kafka, TimescaleDB and local LLMs",
+    description: "A microservice platform for athletic performance: pose analysis, velocity-based training, biometrics, blood-test interpretation, nutrition and a voice coach, wired together by an event spine on Kafka and backed by TimescaleDB, MinIO and Redis, with a Next.js backend-for-frontend in front of it. Everything runs on one workstation, models included.",
+    facts: [
+      "993 unit tests pass at 71 % statement coverage over 5 694 statements, and 206 frontend tests pass in 3.4 seconds; 27 integration and 13 end-to-end tests are written against the live compose stack rather than mocked, and simply skip when it is not running",
+      "Ten services and 9 358 lines of Python across 12 modules share one event contract: six Kafka topics carry telemetry, VBT, pose, blood, voice and anomaly events, while TimescaleDB continuous aggregates, MinIO object storage and Redis sit behind them under SASL-authenticated listeners",
+      "Infrastructure is proven rather than asserted: a log-cap check that cannot be a unit test because log4j is read once at JVM start, a MinIO state check that reads bucket and account names from the resolved compose environment, and a restore drill written around the hypertable that rejects a bare pg_restore",
+      "A 1 001-line stdlib-only Dockerfile auditor ships with the project; run against this checkout it inspects the 12 images compose builds and returns 0 errors and 0 warnings against an empty baseline",
+      "Eight CI jobs cover unit, lint, type-check, integration and the three infrastructure proofs plus the frontend — and the repository says plainly that there is no end-to-end job",
+      "The Next.js 16 front-end (15 dashboard sections, 16 BFF routes) maps upstream failures to 502/504 instead of rendering invented numbers, and the status file states the rule the project is held to: where the documentation disagreed with the tree, the tree won",
+    ],
+    stack: ["Python", "FastAPI", "Apache Kafka", "TimescaleDB", "pgvector", "MinIO", "Redis", "Terraform", "Docker Compose", "Next.js", "Prometheus", "Ollama", "pytest", "Vitest"],
+    icon: <Activity />,
+    link: "https://github.com/Deyan86", linkLabel: "Repository link pending publication",
+  },
+  {
+    number: "14", category: "SOFTWARE & AUTOMATION", title: "Software Development & Automation",
     description: "Cross-platform utilities, desktop applications, web automation and AI-assisted scripts developed across Python, Flask, Electron, React and Kivy.",
     facts: ["Desktop & cross-platform utilities", "Browser automation", "Testing and debugging workflows"],
     stack: ["Python", "Flask", "Electron", "React", "Playwright", "Selenium"],
