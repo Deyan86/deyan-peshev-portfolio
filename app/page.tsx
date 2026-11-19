@@ -1,7 +1,7 @@
 import {
   ArrowUpRight, ArrowRight, Github, Linkedin, Mail, Cpu, BrainCircuit,
   Cloud, Workflow, Network, ChevronDown,
-  Code2, Activity, Server, ShieldCheck, Gauge, FlaskConical, Bot, Building2
+  Code2, Activity, Server, ShieldCheck, Gauge, FlaskConical, Bot, Building2, Stethoscope
 } from "lucide-react";
 import Topbar from "../components/Topbar";
 import { headline, buildMatrix } from "../lib/dataset";
@@ -150,7 +150,21 @@ const projects = [
     link: "https://github.com/Deyan86", linkLabel: "Repository link pending publication",
   },
   {
-    number: "12", category: "SOFTWARE & AUTOMATION", title: "Software Development & Automation",
+    number: "12", category: "AI INFRASTRUCTURE / DIAGNOSTICS", title: "AI Infrastructure Doctor — diagnostics and control plane for a local LLM stack",
+    description: "A diagnostic and monitoring platform for the local AI stack on one GPU machine: it measures GPU, CUDA, Docker, vLLM, Ollama, LM Studio and HuggingFace caches from one CLI, serves the same answers through a REST and streaming control plane, and documents every gap it has not fixed yet.",
+    facts: [
+      "126 tests pass and 2 skip, measured with the repository's own virtualenv. The README carries a Known gaps section with twelve defects recorded against file and line — among them the five of twelve diagnostic routes that still answer 500, and why the suite stays green over them",
+      "Twenty diagnostic modules and a fifteen-module core engine (4 814 and 2 221 lines) behind one CLI: sixteen registry commands covering diagnose, benchmark, fix, optimize and per-backend checks",
+      "The control plane exposes 22 REST and WebSocket paths. Command runs stream over SSE and WebSocket under a 900-second cap, a 20 000-line output limit and a single run slot, and the 29 whitelisted dashboard commands resolve to an argv list that never passes through a shell",
+      "Backends are found by scanning instead of trusting one hardcoded port — port windows 11430-11440 for Ollama and 1230-1240 for LM Studio with a cached positive result — so a server moved off its default port is still diagnosed rather than reported as absent",
+      "Diagnostic history is kept in SQLite for trend queries, and a Windows launcher drives the whole toolchain into the WSL2 project where the GPU, the containers and the model caches actually live",
+    ],
+    stack: ["Python", "FastAPI", "SSE / WebSocket", "Docker SDK", "vLLM", "Ollama", "LM Studio", "HuggingFace", "CUDA", "SQLite", "pytest"],
+    icon: <Stethoscope />,
+    link: "https://github.com/Deyan86", linkLabel: "Repository link pending publication",
+  },
+  {
+    number: "13", category: "SOFTWARE & AUTOMATION", title: "Software Development & Automation",
     description: "Cross-platform utilities, desktop applications, web automation and AI-assisted scripts developed across Python, Flask, Electron, React and Kivy.",
     facts: ["Desktop & cross-platform utilities", "Browser automation", "Testing and debugging workflows"],
     stack: ["Python", "Flask", "Electron", "React", "Playwright", "Selenium"],
