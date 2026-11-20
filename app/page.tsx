@@ -1,7 +1,7 @@
 import {
   ArrowUpRight, ArrowRight, Github, Linkedin, Mail, Cpu, BrainCircuit,
   Cloud, Workflow, Network, ChevronDown,
-  Code2, Activity, Server, ShieldCheck, Gauge, FlaskConical, Bot, Building2, Stethoscope
+  Activity, Server, ShieldCheck, Gauge, FlaskConical, Bot, Building2, Stethoscope
 } from "lucide-react";
 import Topbar from "../components/Topbar";
 import { headline, buildMatrix } from "../lib/dataset";
@@ -177,14 +177,6 @@ const projects = [
     stack: ["Python", "FastAPI", "Apache Kafka", "TimescaleDB", "pgvector", "MinIO", "Redis", "Terraform", "Docker Compose", "Next.js", "Prometheus", "Ollama", "pytest", "Vitest"],
     icon: <Activity />,
     link: "https://github.com/Deyan86", linkLabel: "Repository link pending publication",
-  },
-  {
-    number: "14", category: "SOFTWARE & AUTOMATION", title: "Software Development & Automation",
-    description: "Cross-platform utilities, desktop applications, web automation and AI-assisted scripts developed across Python, Flask, Electron, React and Kivy.",
-    facts: ["Desktop & cross-platform utilities", "Browser automation", "Testing and debugging workflows"],
-    stack: ["Python", "Flask", "Electron", "React", "Playwright", "Selenium"],
-    icon: <Code2 />,
-    link: "https://github.com/Deyan86", linkLabel: "Repository link pending publication",
   }
 ];
 
@@ -194,7 +186,7 @@ const skills = [
   { title: "Cloud-Native & DevOps", items: ["Kubernetes", "K3s", "Docker", "Terraform", "ArgoCD", "Jenkins", "Helm", "GitOps"] },
   { title: "Infrastructure & Operations", items: ["NetApp ONTAP", "Nutanix", "Veritas NetBackup", "VMware", "Proxmox", "Linux", "SAN / NAS"] },
   { title: "Observability & Security", items: ["Prometheus", "Grafana", "Netdata", "Wazuh", "Falco", "Velero"] },
-  { title: "Programming & Automation", items: ["Python", "Bash", "PowerShell", "JavaScript", "React", "Flask", "Playwright", "Selenium"] }
+  { title: "Software Development & Automation", items: ["Python", "Bash", "PowerShell", "JavaScript", "React", "Flask", "Electron", "Kivy", "Playwright", "Selenium"] }
 ];
 
 const experience = [

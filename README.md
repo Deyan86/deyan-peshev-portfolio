@@ -7,7 +7,7 @@ static HTML, so the published pages contain the real numbers rather than a clien
 
 | Route | Contents |
 |---|---|
-| `/` | Profile, six engineering projects, experience, skills, credentials, contact |
+| `/` | Profile, thirteen engineering projects, experience, skills, credentials, contact |
 | `/benchmarks` | Project 01's evidence: weighted leaderboard (47 models), serve-runtime throughput read from the exported PDF tables, the Blackwell build constraint, and the 34-model strict screen |
 
 ## Where the numbers come from
