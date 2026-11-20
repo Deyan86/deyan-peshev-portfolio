@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { Download, Menu, X } from "lucide-react";
+import { Mail, Menu, X } from "lucide-react";
 
 const links = [
   ["About", "#about"], ["Projects", "#projects"], ["Benchmarks", "/benchmarks"],
@@ -48,8 +48,8 @@ export default function Topbar() {
             close();
           }}>{label}</a>
         ))}
-        <a className="nav-cta" href="/Deyan_Peshev_CV.pdf" target="_blank">
-          Download CV <Download size={15} />
+        <a className="nav-cta" href="mailto:deyan.peshev.cloud@gmail.com?subject=CV%20request">
+          Request CV <Mail size={15} />
         </a>
       </nav>
     </header>

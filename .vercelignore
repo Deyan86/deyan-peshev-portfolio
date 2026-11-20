@@ -1,0 +1,6 @@
+# The Vercel CLI uploads the working directory rather than the git index, so .gitignore alone does not
+# keep the CV off the public host. Publishing it stays an explicit decision.
+public/Deyan_Peshev_CV.pdf
+
+# Local `next export` output; the build on Vercel regenerates it.
+out
