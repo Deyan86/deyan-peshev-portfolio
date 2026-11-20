@@ -40,16 +40,21 @@ npm run build && npx next start -p 3100
 
 ## Deploy to Vercel
 
-1. Create a GitHub repository (suggested: `deyan-peshev-portfolio`) and push this folder to its root.
-2. In Vercel: **Add New → Project**, import the repository; Next.js is detected automatically.
-3. No environment variables are needed — the site is fully static.
-4. Replace the `metadataBase` URL in `app/layout.tsx` with the assigned `*.vercel.app` URL.
+Live at https://deyan-peshev.vercel.app (project `deyan-peshev`, deployed 2026-11-20). Two ways to ship:
+
+1. **Repository import (preferred):** create a GitHub repository, push this folder to its root, then
+   Vercel **Add New → Project** and import it. Next.js is detected automatically and every push deploys.
+2. **CLI:** `vercel deploy . --prod --yes`. This uploads the working directory rather than the git index,
+   which is why `.vercelignore` exists — without it a gitignored file still reaches the public host.
+
+No environment variables are needed; the site is fully static. `metadataBase` in `app/layout.tsx` is the
+assigned `*.vercel.app` URL.
 
 ## Open before this goes public
 
-- `public/Deyan_Peshev_CV.pdf` is served at a guessable URL and linked from the nav. A CV carries a phone
-  number and an address: decide deliberately whether it is published, and consider a request-based handoff
-  instead of a direct file.
+- `public/Deyan_Peshev_CV.pdf` is gitignored and listed in `.vercelignore`, so neither a Git deploy nor a
+  CLI deploy publishes it; the nav asks for it by email instead. Putting the file online is still a
+  decision to make deliberately, because a CV carries a phone number and an address.
 - Project cards 02–06 link to the GitHub profile, not to repositories, because those repositories are not
   published yet. Replace `linkLabel: "Repository link pending publication"` in `app/page.tsx` as each one goes
   up — a portfolio link that leads nowhere is worse than an honest "pending".
