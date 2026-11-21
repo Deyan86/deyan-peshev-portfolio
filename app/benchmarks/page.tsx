@@ -128,12 +128,14 @@ export default function Benchmarks() {
             <h3>Recorded remediation</h3>
             <ul className="fact-list">{env.recommendation.map((r: string) => <li key={r}>{r}</li>)}</ul>
             <p className="fine"><b>{env.bottom_line}</b></p>
-            <table>
-              <thead><tr><th>Flag</th><th>Purpose as recorded</th></tr></thead>
-              <tbody>{env.flags.map((f: any) => (
-                <tr key={f.flag}><td className="mono">{f.flag}</td><td>{f.purpose}</td></tr>
-              ))}</tbody>
-            </table>
+            <div className="table-scroll">
+              <table>
+                <thead><tr><th>Flag</th><th>Purpose as recorded</th></tr></thead>
+                <tbody>{env.flags.map((f: any) => (
+                  <tr key={f.flag}><td className="mono">{f.flag}</td><td>{f.purpose}</td></tr>
+                ))}</tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>

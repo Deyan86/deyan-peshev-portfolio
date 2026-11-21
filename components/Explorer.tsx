@@ -90,14 +90,16 @@ export default function Explorer({
                 </button>
               ))}
             </div>
-            <table className="tight">
-              <thead><tr><th>Category</th><th>Weight</th>
-                {chosen.map(m => <th key={m.model}>{m.model.slice(0, 16)}</th>)}</tr></thead>
-              <tbody>{cats.map(c => (
-                <tr key={c}><td>{c}</td><td className="mono">{weights[c].toFixed(2)}</td>
-                  {chosen.map(m => <td key={m.model} className="sc">{m.categories[c] ?? "—"}</td>)}</tr>
-              ))}</tbody>
-            </table>
+            <div className="table-scroll">
+              <table className="tight">
+                <thead><tr><th>Category</th><th>Weight</th>
+                  {chosen.map(m => <th key={m.model}>{m.model.slice(0, 16)}</th>)}</tr></thead>
+                <tbody>{cats.map(c => (
+                  <tr key={c}><td>{c}</td><td className="mono">{weights[c].toFixed(2)}</td>
+                    {chosen.map(m => <td key={m.model} className="sc">{m.categories[c] ?? "—"}</td>)}</tr>
+                ))}</tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>
