@@ -50,7 +50,7 @@ export default function Explorer({
         </div>
         <div className="grid2">
           <div className="card">
-            <svg viewBox="0 0 380 330" role="img" aria-label="Category radar for the selected models">
+            <svg viewBox="-46 0 438 330" role="img" aria-label="Category radar for the selected models">
               {[100, 75, 50, 25].map(v => (
                 <polygon key={v} points={cats.map((_, i) => pt(i, v).join(",")).join(" ")}
                          fill="none" stroke="rgba(132,153,220,.16)" />
